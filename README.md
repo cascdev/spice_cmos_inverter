@@ -27,9 +27,9 @@ ngspice transient_simu.sp
 ```
 
 
-# Most information in link bellow and internet's videos: 
+## Most information in link bellow and internet's videos: 
 [NGSPICE DOCUMENTATION](https://ngspice.sourceforge.io/)
 
 
-#Minimal Requirements
+## Minimal Requirements
 For the purpose of this repository to be achieved: execute and upload the graphs of each analysis; You must have at least NGSPICE installed globally.
