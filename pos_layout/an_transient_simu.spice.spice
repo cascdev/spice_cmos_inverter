@@ -1,0 +1,44 @@
+*           simulação Transiente de inversor CMOS PÓS LAYOUT 
+
+*    Importar o subciruito
+* nome: CMOS_INVERTER  terminais: IN, OUT, VDD e GND 
+.include  ./subckt_pos_layout_inverter.spice
+
+
+*     Definição da fonte principal 
+*name (+) (-)  value
+ VDD  VDD GND  2.5
+
+*     Definição da fonte de pulso:
+* Parâmetros da fonte de pulso
+.param  v_dc_offset    = 0.0V
+.param  v_peak         = 2.5V
+.param  time_delay         = 2p
+.param  time_rise          = 10p
+.param  time_fall          = 10p
+.param  time_pulse_period  = 1n
+.param  time_total_period  = 2n
+
+* Fonte de pulso:
+Vin v_source GND DC 0.0V PULSE (
++                               v_dc_offset   
++                               v_peak       
++                               time_delay        
++                               time_rise         
++                               time_fall         
++                               time_pulse_period
++                               time_total_period  )
+
+
+* Conectar cada terminal do subcircuito, na sequência que foi definida
+*          IN        OUT       VDD GND
+Xcmos_inv  v_source  v_output  VDD GND cmos_inv
+
+*     Realizar análises de transiente e plotar gráfico resposta da saída.
+.control   
+*   cmd  step stop  
+    TRAN 1p   3n 
+     
+    PLOT V(v_source) V(v_output)    
+.endc
+.END

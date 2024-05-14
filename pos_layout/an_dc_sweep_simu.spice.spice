@@ -1,0 +1,32 @@
+*simulação transiente de inversor CMOS
+
+*     importar o subciruito
+* nome: CMOS_INVERTER  terminais: IN, OUT, VDD e GND  
+.include  ./subckt_pos_layout_inverter.spice
+
+
+
+*     Definição das fontes  
+  *label ( + )    ( - )  value
+  VDD     VDD      GND   2.5V
+  Vin   v_source   GND   2.5V 
+
+
+*     Conectar cada terminal do subcircuito, na sequência que foi definida.
+*          IN        OUT       VDD GND
+Xcmos_inv  v_source  v_output  VDD GND cmos_inv
+
+
+*     Realizar análise de transiente e plotar.
+.control   
+*   cmd src  start stop step
+    DC  Vin  0     2.5  0.05    
+    
+    PLOT V(v_source) V(v_output) 
+.endc
+
+.END
+
+
+
+
