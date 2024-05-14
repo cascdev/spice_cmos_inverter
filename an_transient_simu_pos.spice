@@ -2,12 +2,12 @@ simulação transiente de inversor CMOS
 
 * importa o subciruito
 * nome: CMOS_INVERTER  terminais: v_in, v_out, vdd e gnd 
-.include	./subckt_CMOS_inverter.sp
+.include	./subckt_CMOS_inverter_pre.spice
 
 
 *	Definição da fonte principal 
-*name	(+)	(-)	value
-VDD	VDD	GND	 2.5
+*name	(+)	 (-)	value
+VDD	    VDD	 GND	 2.5
 
 
 *	Definição da fonte de pulso:
@@ -40,8 +40,8 @@ Vin v_source GND DC 0.0V PULSE (
 XCMOS_INVERTER	v_source v_output VDD GND CMOS_INVERTER
 
 
-
-*       Realizar análises de transiente e plotar gráfico resposta da saída
+*       Realizar análises de transiente
+* e plotar gráfico resposta da saída
 .control   
 *   cmd  step stop	
     TRAN 1p   3n 
