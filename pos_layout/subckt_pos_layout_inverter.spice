@@ -1,25 +1,16 @@
 * SPICE3 file created from layout_inverter.ext - technology: sky130A
 
-.option scale=5n
-
 * incluir libs
 .include	../libs/pshort.lib
 .include	../libs/nshort.lib
 
 .subckt	cmos_inv OUT IN	VDD	GND
-* type	drain	gate	source	bulk  model	           width  length
- M1000  OUT     IN      VDD     VDD   pshort_model.0   w=300  l=15   
- +ad=11400 pd=676 as=11400 ps=676
- 
- M1001  OUT     IN      GND     GND   nshort_model.0   w=100  l=15   
- +ad=3800  pd=276 as=3800  ps=276
+* type	drain	gate	source	bulk  model	           width    length
+ M1000  OUT     IN      VDD     VDD   pshort_model.0   w=3e+06u l=150000u
++  ad=1.14e+12p pd=6.76e+06u as=1.14e+12p ps=6.76e+06u
 
-C0 OUT VDD 0.30fF
-C1 OUT IN  0.01fF
-C2 IN  VDD 0.00fF
-C3 OUT GND 0.16fF
-C4 IN  GND 0.40fF
-C5 VDD GND 1.15fF
+M1001   OUT     IN      GND     GND   nshort_model.0   w=1e+06u l=150000u
++  ad=3.8e+11p pd=2.76e+06u as=3.8e+11p ps=2.76e+06u
 
 .ends
 
