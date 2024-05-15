@@ -1,16 +1,17 @@
 
 * Inclusão das bibliotecas
-.include	./libs/pshort.lib
-.include	./libs/nshort.lib
+.include	../libs/pshort.lib
+.include	../libs/nshort.lib
 
 
 * Declaração do subcircuito do inversor CMOS
-
-.subckt	CMOS_INVERTER  v_in  v_out vdd  gnd ;nome do subckt e de seus terminais
+*nome do subckt e de seus terminais
+.subckt	CMOS_INVERTER   IN  OUT VDD  GND 
   
-* type	drain	gate	source	bulk  model	      width  length
-  MN	v_out	v_in	gnd	gnd   nshort_model.0  W=1u   L=0.15u
-  MP	v_out	v_in	vdd	vdd   pshort_model.0  W=3u   L=0.15u  
+* type	drain	gate	source	bulk  model	          width  length
+  MP    OUT   IN    VDD     VDD   pshort_model.0  w=3u   l=0.15u
+  MN	  OUT	  IN	  GND	    GND   nshort_model.0  w=1u   l=0.15u
+    
 .ends
 
 .end
