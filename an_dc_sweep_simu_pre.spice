@@ -12,7 +12,7 @@ simulação transiente de inversor CMOS
 
 
 * Conectar cada terminal do subcircuito, na sequência que foi definida
-*                    v_in    v_out   vdd gnd
+*                    IN     OUT      VDD GND
   XCMOS_INVERTER   v_source v_output VDD GND  CMOS_INVERTER
 
 

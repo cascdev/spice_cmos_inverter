@@ -1,7 +1,7 @@
 
 * Inclusão das bibliotecas
-.include	../libs/pshort.lib
-.include	../libs/nshort.lib
+.include	./libs/pshort.lib
+.include	./libs/nshort.lib
 
 
 * Declaração do subcircuito do inversor CMOS
