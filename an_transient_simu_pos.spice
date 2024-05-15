@@ -2,7 +2,7 @@ simulação transiente de inversor CMOS
 
 * importa o subciruito
 * nome: CMOS_INVERTER  terminais: v_in, v_out, vdd e gnd 
-.include	./subckt_CMOS_inverter_pre.spice
+.include	./subckt_pre_layout_inverter.spice
 
 
 *	Definição da fonte principal 
