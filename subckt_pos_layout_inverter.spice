@@ -1,8 +1,8 @@
 * SPICE3 file created from layout_inverter.ext - technology: sky130A
 
 * incluir libs
-.include	../libs/pshort.lib
-.include	../libs/nshort.lib
+.include	./libs/pshort.lib
+.include	./libs/nshort.lib
 
 .subckt	cmos_inv OUT IN	VDD	GND
 * type	drain	gate	source	bulk  model	           width    length
